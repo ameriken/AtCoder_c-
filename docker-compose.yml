@@ -1,16 +1,15 @@
 version: '3'
-
 services:
-  dev:
+  gdbdebug:
     build: # use the Dockerfile in the current directory
-      context: .
+      context: ./.docker/gdb/
       dockerfile: Dockerfile
     security_opt: # options needed for gdb debugging
       - seccomp:unconfined
       - apparmor:unconfined
-    container_name: dev
+    container_name: gdbdebug
     ports:
       - "7776:22" # SSH
       - "7777:7777" # GDB Server
     volumes:
-      - ./:/home/dev
+      - ./:/home/gdbdebug
