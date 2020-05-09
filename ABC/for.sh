@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-for i in {2..100}
+for i in {1..1}
 do
     i=`printf %03d $i`
     echo ${i}
