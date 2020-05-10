@@ -11,5 +11,6 @@ services:
     ports:
       - "7776:22" # SSH
       - "7777:7777" # GDB Server
+    restart: always
     #volumes:
     #  - ./:/home/gdbdebug

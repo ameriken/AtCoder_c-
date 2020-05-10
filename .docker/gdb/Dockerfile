@@ -14,7 +14,7 @@ RUN update-alternatives --config gcc
 
 
 RUN mkdir -p /tmp/
-COPY .docker/gdb/cmake-3.16.6.tar.gz  /tmp/
+COPY cmake-3.16.6.tar.gz  /tmp/
 
 RUN cd /tmp     && \
     tar -zxvf cmake-3.16.6.tar.gz           && \
