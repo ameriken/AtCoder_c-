@@ -9,6 +9,9 @@ int main() {
     vector<int> A(N);
     vector<vector<int> > x(N), y(N);
 
+    // ここで初期化をしている
+    // x[i][j] は親切な人か不親切な人か
+    // y[i][j] は真実か嘘か
     for (int i = 0; i < N; i++) {
         cin >> A[i];
         x[i] = vector<int>(A[i]);
@@ -35,6 +38,5 @@ int main() {
         }
         if (good) ans = max(ans, cnt);
     }
-
     cout << ans << endl;
 }
