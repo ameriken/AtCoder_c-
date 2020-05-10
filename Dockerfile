@@ -14,7 +14,7 @@ RUN update-alternatives --config gcc
 
 
 RUN mkdir -p /tmp/
-COPY cmake-3.16.6.tar.gz  /tmp/
+COPY .docker/gdb/cmake-3.16.6.tar.gz  /tmp/
 
 RUN cd /tmp     && \
     tar -zxvf cmake-3.16.6.tar.gz           && \
@@ -41,6 +41,7 @@ EXPOSE 22 7777
 # Create dev user with password 'dev'
 RUN useradd -ms /bin/bash gdbdebug
 RUN echo 'gdbdebug:gdbdebug' | chpasswd
+WORKDIR  /home/gdbdebug
 
 # Upon start, run ssh daemon
 CMD ["/usr/sbin/sshd", "-D"]
